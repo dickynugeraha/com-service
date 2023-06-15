@@ -53,3 +53,12 @@ label {
 main.bg-color2 {
     min-height: 93vh;
 }
+
+.bg-login {
+    background: url("/assets/images/background-layanan-kamu.png") no-repeat
+        center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

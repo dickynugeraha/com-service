@@ -76,20 +76,21 @@
           <h5 class="modal-title" id="exampleModalLabel">Ubah admin</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form action="/admin/upload" method="post" enctype="multipart/form-data">
+          <form action="/admin/update" method="post" enctype="multipart/form-data">
             <div class="modal-body">
                 <div class="mb-2">
                     <label for="name" class="form-label">Nama</label>
-                    <input type="text" name="name" id="name" class="form-control" value="{{$admin->name}}" required>
+                    <input type="text" name="name" id="name" class="form-control" value="{{$admin->name}}">
                 </div>
                 <div class="mb-2">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" value="{{$admin->email}}" required>
+                    <input type="email" name="email" id="email" class="form-control" value="{{$admin->email}}">
                 </div>
                 <div class="mb-2">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" required>
+                    <input type="password" name="password" id="password" class="form-control">
                 </div>
+                <input type="hidden" name="admin_id" value="{{$admin->id}}">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>

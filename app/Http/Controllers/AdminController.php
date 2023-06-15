@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -18,6 +19,24 @@ class AdminController extends Controller
         $admins = Admin::all();
 
         return view("admins.index", compact("admins"));
+    }
+
+
+    public function login(Request $request)
+    {
+        $admin = Admin::where("email", "=", $request->email)->first();
+
+        if ($admin == null) {
+            return redirect()->back()->with("alert", "User tidak ditemukan!");
+        }
+        if (!Hash::check($request->password, $admin->password)) {
+            return redirect()->back()->with("alert", "Password tidak valid!");
+        }
+
+        Session::put("isLogin", true);
+        Session::put("adminName", $admin->name);
+
+        return redirect("/admin/customers");
     }
 
     /**
@@ -38,7 +57,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin = Admin::where("id", "=", $request->email)->first();
+        $admin = Admin::where("email", "=", $request->email)->first();
 
         if ($admin) {
             return redirect()->back()->with("alert", "Email sudah digunakan!");
@@ -86,13 +105,16 @@ class AdminController extends Controller
      */
     public function update(Request $request)
     {
-        $admin = Admin::where("id", "=", $request->email);
+        //user old
+        $admin = Admin::where("email", "=", $request->email)->first();
 
-        if ($admin->first()) {
+        if ($admin) {
             return redirect()->back()->with("alert", "Email sudah digunakan!");
         }
 
-        $admin->update([
+        $adminUpdate = Admin::where("id", "=", $request->admin_id)->first();
+
+        $adminUpdate->update([
             "name" => $request->name,
             "email" => $request->email,
             "password" => Hash::make($request->password),

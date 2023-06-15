@@ -10,10 +10,12 @@
             class="navbar sticky-top flex-md-nowrap p-0"
         >
             <a 
-                class="navbar-brand col-md-3 col-lg-2 me-0 px-3" 
+                class="navbar-brand col-md-3 col-lg-2 me-0 px-3 py-1" 
                 href="#"
                 style="background-color: white"
-                >E - Electronic</a
+                >
+                <img width="40px" height="40px" src="/assets/images/logo-navbar.png" alt="" srcset="">
+                </a
             >
             <button
                 class="navbar-toggler d-md-none collapsed"
@@ -28,7 +30,7 @@
             </button>
             <div class="d-flex">
                 <div class="nav-item text-nowrap">
-                    <p class="nav-link px-3 p-0 m-0">Nama</p>
+                    <p class="nav-link px-3 p-0 m-0">{{Session::get("adminName")}}</p>
                 </div>
                 <div class="nav-item text-nowrap">
                     <p class="nav-link px-3 p-0 m-0"><i class="fa fa-user-circle fs-5"></i></p>

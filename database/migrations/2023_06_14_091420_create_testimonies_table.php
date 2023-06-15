@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('testimonys', function (Blueprint $table) {
+        Schema::create('testimonies', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("description");
-            $table->boolean("is_show_dashboard")->default(0);
             $table->string("category");
+            $table->string("description");
+            $table->tinyInteger("is_show_dashboard")->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('testimonys');
+        Schema::dropIfExists('testimonies');
     }
 };

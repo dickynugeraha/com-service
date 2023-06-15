@@ -68,14 +68,14 @@
                     <option value="">--Pilih--</option>
                     <option value="proses">Proses</option>
                     <option value="pengiriman">Pengiriman</option>
-                    <option value="diterima">Diterima</option>
+                    <option value="selesai">Selesai</option>
                     <option value="batal">Batal</option>
                   </select>
               </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button class="btn btn-sm btn-primary" type="submit">Add</button>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>
+              <button class="btn btn-sm btn-primary" type="submit">Tambah</button>
           </div>
       </form>
   </div>
@@ -106,8 +106,8 @@
       <td>{{$customer->name}}</td>
       <td>{{$customer->address}}</td>
       <td>{{$customer->category}}</td>
-      <td>{{$customer->price}}</td>
-      <td>{{$customer->products}}</td>
+      <td>Rp. {{number_format($customer->price,0,',','.')}}</td>
+      <td>{{$customer->product}}</td>
       <td>{{$customer->payment_method}}</td>
       <td>{{$customer->status}}</td>
       <td>

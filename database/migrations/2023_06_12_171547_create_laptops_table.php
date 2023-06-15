@@ -19,6 +19,9 @@ return new class extends Migration
             $table->double("price", 10, 2);
             $table->string("description");
             $table->string("photo");
+            $table->string("photo2")->nullable();
+            $table->string("photo3")->nullable();
+            $table->string("photo4")->nullable();
             $table->string("category");
             $table->boolean("is_available")->default(1);
             $table->timestamps();

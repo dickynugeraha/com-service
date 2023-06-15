@@ -15,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+
+        return view("produk.index", compact("products"));
     }
 
     /**
@@ -36,7 +38,19 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $image = $request->file('product_photo');
+        $image_name = time() . "." . $image->getClientOriginalExtension();
+        $destinationPath = public_path('/uploads/product_photo');
+        $image->move($destinationPath, $image_name);
+
+        Product::create([
+            "name" => $request->name,
+            "price" => $request->price,
+            "description" => $request->description,
+            "photo" => $image_name,
+        ]);
+
+        return redirect()->back()->with("alert", "Data produk berhasil ditambah!");
     }
 
     /**
@@ -68,9 +82,33 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(UpdateProductRequest $request)
     {
-        //
+        $product = Product::where("id", "=", $request->product_id);
+        $image = $request->file('product_photo');
+        $image_name = "";
+
+        if ($request->product_photo != null) {
+            $image_name = time() . "." . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/product_photo');
+            $image->move($destinationPath, $image_name);
+
+            $old_image = $product->first()->photo;
+            $image = public_path('uploads/product_photo/') . $old_image;
+            if (file_exists($image)) @unlink($image);
+        } else {
+            $image_name = $product->first()->photo;
+        }
+
+        $product->update([
+            "name" => $request->name,
+            "price" => $request->price,
+            "description" => $request->description,
+            "is_available" => $request->is_available,
+            "photo" => $image_name,
+        ]);
+
+        return redirect()->back()->with("alert", "Data produk berhasil diubah!");
     }
 
     /**
@@ -79,8 +117,17 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::where("id", "=", $id);
+
+        $fileName = $product->first()->photo;
+
+        $image = public_path('uploads/product_photo/') . $fileName;
+
+        if (file_exists($image)) @unlink($image);
+
+        $product->delete();
+        return redirect()->back()->with('alert', 'Data produk berhasil dihapus!');
     }
 }

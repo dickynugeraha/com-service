@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $admins = Admin::all();
+
+        return view("admins.index", compact("admins"));
     }
 
     /**
@@ -35,7 +38,21 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $admin = Admin::where("id", "=", $request->email)->first();
+
+        if ($admin) {
+            return redirect()->back()->with("alert", "Email sudah digunakan!");
+        }
+        // if (!Hash::check($request->password, $admin->password)) {
+        //     return redirect()->back()->with("alert", "Password tidak valid!");
+        // }
+        Admin::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => Hash::make($request->password),
+        ]);
+
+        return redirect()->back()->with("alert", "Data admin berhasil ditambah!");
     }
 
     /**
@@ -67,9 +84,21 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request)
     {
-        //
+        $admin = Admin::where("id", "=", $request->email);
+
+        if ($admin->first()) {
+            return redirect()->back()->with("alert", "Email sudah digunakan!");
+        }
+
+        $admin->update([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => Hash::make($request->password),
+        ]);
+
+        return redirect()->back()->with("alert", "Data admin berhasil diubah!");
     }
 
     /**
@@ -78,8 +107,9 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy($id)
     {
-        //
+        Admin::where("id", "=", $id)->delete();
+        return redirect()->back()->with("alert", "Data admin berhasil dihapus!");
     }
 }

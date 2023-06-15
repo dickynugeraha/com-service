@@ -5,13 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Testimony extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "name",
-        "price",
-        "description",
-        "photo",
-    ];
+    protected $fillable = ["name", "description", "category", "is_show_dashboard"];
 }

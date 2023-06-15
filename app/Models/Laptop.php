@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Laptop extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "name",
+        "price",
+        "description",
+        "photo",
+        "photo2",
+        "photo3",
+        "photo4",
+        "category"
+    ];
 }

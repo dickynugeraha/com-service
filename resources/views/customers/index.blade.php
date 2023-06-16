@@ -8,7 +8,7 @@
     </a>
   </div>
   <div class="col-md-2">
-    <a class="fs-6 d-block text-decoration-none bg-color rounded color-white text-center py-2 fw-bold">
+    <a href="customer/create-pdf" class="fs-6 d-block text-decoration-none bg-color rounded color-white text-center py-2 fw-bold">
       Cetak
     </a>
   </div>

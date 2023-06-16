@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -24,10 +25,29 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createPDF()
     {
-        //
+        $customers = Customer::all();
+
+        $data = [
+            "title" => "Data customers",
+            "date" => date("m/d/Y"),
+            "customers" => $customers,
+        ];
+        $pdf = Pdf::loadView("customers.data", compact("data"))->setOption(['defaultFont' => 'sans-serif']);;
+
+        return $pdf->download('customers.pdf');
+
+        // if (!File::exists($path)) {
+        //     File::makeDirectory($path, $mode = 0755, true, true);
+        // }
+
+        // $pdf = PDF::loadView("customers.data", $data)->save('' . $path . '/' . $filename . '.pdf');
+
+        // return $pdf->download('' . $filename . '.pdf');
     }
+
+
 
     /**
      * Store a newly created resource in storage.

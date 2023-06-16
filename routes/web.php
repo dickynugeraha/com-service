@@ -47,6 +47,7 @@ Route::group(["middleware" => ["admin"]], function () {
     Route::post("customer", [CustomerController::class, "store"]);
     Route::post("customer/update", [CustomerController::class, "update"]);
     Route::post("customer/{id}/delete", [CustomerController::class, "destroy"]);
+    Route::get("admin/customer/create-pdf", [CustomerController::class, "createPDF"]);
     // product
     Route::get("admin/products", [ProductController::class, "index"]);
     Route::post("product", [ProductController::class, "store"]);

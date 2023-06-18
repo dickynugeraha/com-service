@@ -20,9 +20,7 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [TestimonyController::class, "testimoniesHome"]);
 // admin
 Route::get("admin/login", function () {
     $isLogin = Session::get("isLogin");

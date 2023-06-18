@@ -1,7 +1,7 @@
 *,
 body,
 html {
-    font-family: "Lato", sans-serif;
+    font-family: "Poppins", sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -11,23 +11,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Merriweather", serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .header {
-    font-family: "Merriweather", serif;
-}
-
-.order {
-    border-radius: 4rem;
-    transition: all 0.3s ease;
-    background-color: grey;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.order:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+    font-family: "Poppins", sans-serif;
 }
 
 label {
@@ -50,10 +38,6 @@ label {
     color: white;
 }
 
-main.bg-color2 {
-    min-height: 93vh;
-}
-
 .bg-login {
     background: url("/assets/images/background-layanan-kamu.png") no-repeat
         center center fixed;
@@ -61,4 +45,55 @@ main.bg-color2 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.nav-item.act > a:hover {
+    color: white;
+}
+
+.layanan-item {
+    transition: transform 0.2s;
+}
+
+.layanan-item:hover {
+    transform: scale(1.1);
+    border: 1px solid #d2d2d2;
+}
+
+#layanan-kami {
+    width: 100%;
+    display: table;
+    margin: 0;
+    max-width: none;
+    height: 90vh;
+    background-image: url("/assets/images/background-layanan-kami.png");
+    background-size: 100% 100%;
+}
+
+.card-layanan {
+    transition: transform 0.2s;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: none;
+    width: 18rem;
+}
+
+.card-layanan:hover {
+    transform: scale(1.1);
+}
+
+#faq {
+    width: 100%;
+    display: table;
+    margin: 0;
+    max-width: none;
+    height: 90vh;
+    background-image: url("/assets/images/background-faq.png");
+    background-size: 100% 100%;
+}
+
+#consultant,
+#definition,
+#service {
+    cursor: pointer;
 }

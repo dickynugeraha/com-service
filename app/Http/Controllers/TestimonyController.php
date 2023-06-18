@@ -19,6 +19,13 @@ class TestimonyController extends Controller
         return view("testimonies.index", compact("testimonies"));
     }
 
+    public function testimoniesHome()
+    {
+        $testimonies = Testimony::where("is_show_dashboard", "1")->get();
+
+        return view("home", compact("testimonies"));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

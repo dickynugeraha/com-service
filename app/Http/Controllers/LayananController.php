@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Layanan;
+use App\Models\Testimony;
 use Illuminate\Http\Request;
 
 class LayananController extends Controller
@@ -17,6 +18,18 @@ class LayananController extends Controller
         $layanans = Layanan::all();
 
         return view("layanan.index", compact("layanans"));
+    }
+
+    public function index2()
+    {
+        $ketik = Layanan::where("category", "=", "ketik");
+        $cetak = Layanan::where("category", "=", "cetak");
+        $jilid = Layanan::where("category", "=", "jilid");
+
+        $testimonies = Testimony::where("category", "=", "laptop")->get();
+
+
+        return view("layanan.index_user", compact("ketik", "cetak", "jilid", "testimonies"));
     }
 
     /**

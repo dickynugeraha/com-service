@@ -30,16 +30,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-3 act btn btn-primary px-2 py-0 m-0">
-                    <a class="color-white nav-link fs-6 fw-bold" href="/product"
+                <li class="nav-item mx-3 {{ request()->route()->uri == "produk" ? "act btn btn-primary px-2 py-0 m-0" : ""}}">
+                    <a class="{{ request()->route()->uri == "produk" ? "color-white" : ""}} nav-link fs-6 fw-bold" href="/produk"
                         >Produk</a
                     >
                 </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link fs-6 fw-bold" href="/layanan">Layanan</a>
+                <li class="nav-item mx-3 {{ request()->route()->uri == "layanan" ? "act btn btn-primary px-2 py-0 m-0" : ""}}">
+                    <a class="{{ request()->route()->uri == "layanan" ? "color-white" : ""}} nav-link fs-6 fw-bold" href="/layanan">Layanan</a>
                 </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link fs-6 fw-bold" href="/laptop">Laptop</a>
+                <li class="nav-item mx-3 {{ request()->route()->uri == "laptop" ? "act btn btn-primary px-2 py-0 m-0" : ""}}">
+                    <a class="{{ request()->route()->uri == "laptop" ? "color-white" : ""}} nav-link fs-6 fw-bold" href="/laptop">Laptop</a>
                 </li>
             </ul>
         </div>

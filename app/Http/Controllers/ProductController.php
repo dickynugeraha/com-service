@@ -20,6 +20,13 @@ class ProductController extends Controller
         return view("produk.index", compact("products"));
     }
 
+    public function index2()
+    {
+        $products = Product::all();
+
+        return view("produk.index_user", compact("products"));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

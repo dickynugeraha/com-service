@@ -21,6 +21,10 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/', [TestimonyController::class, "testimoniesHome"]);
+Route::get("produk", [ProductController::class, "index2"]);
+Route::get("laptop", [LaptopController::class, "index2"]);
+Route::get("layanan", [LayananController::class, "index2"]);
+
 // admin
 Route::get("admin/login", function () {
     $isLogin = Session::get("isLogin");
@@ -29,9 +33,7 @@ Route::get("admin/login", function () {
     }
     return view("login");
 });
-
 Route::post("/login", [AdminController::class, "login"]);
-
 Route::group(["middleware" => ["admin"]], function () {
     Route::get("logout", function () {
         $isLogin = Session::get("isLogin");

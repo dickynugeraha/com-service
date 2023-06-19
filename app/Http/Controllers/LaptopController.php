@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Laptop;
+use App\Models\Testimony;
 use Illuminate\Http\Request;
 
 class LaptopController extends Controller
@@ -17,6 +18,17 @@ class LaptopController extends Controller
         $laptops = Laptop::all();
 
         return view("laptop.index", compact("laptops"));
+    }
+
+    public function index2()
+    {
+        $laptops = Laptop::where("category", "=", "laptop")->get();
+        $services = Laptop::where("category", "=", "service")->get();
+        $sperparts = Laptop::where("category", "=", "sperpart")->get();
+
+        $testimonies = Testimony::where("category", "=", "laptop")->get();
+
+        return view("laptop.index_user", compact("laptops", "services", "sperparts", "testimonies"));
     }
 
     /**

@@ -267,7 +267,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active mb-5">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-8" style="min-height: 12rem">
                         <p class="fs-5 fst-italic" style="color:grey">
                             <i class="fa fa-quote-left pe-2"></i>
                             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -283,9 +283,8 @@
             </div>
             @foreach ($testimonies as $testimony)
             <div class="carousel-item mb-5">
-          
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-8" style="min-height: 12rem">
                         <p class="fs-5 fst-italic" style="color:grey">
                             <i class="fa fa-quote-left pe-2"></i>
                             {{$testimony->description}}
@@ -296,67 +295,6 @@
                 </div>
             </div>
             @endforeach
-            {{-- <div class="carousel-item active mb-5">
-                <img
-                    class="rounded-circle shadow-1-strong mb-4"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
-                    alt="avatar"
-                    style="width: 150px"
-                />
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <h5 class="mb-3">Maria Kate</h5>
-                        <p class="text-muted">
-                            <i class="fas fa-quote-left pe-2"></i>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Minus et deleniti nesciunt sint eligendi
-                            reprehenderit reiciendis, quibusdam illo, beatae
-                            quia fugit consequatur laudantium velit magnam
-                            error. Consectetur distinctio fugit doloremque.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item mb-5">
-                <img
-                    class="rounded-circle shadow-1-strong mb-4"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp"
-                    alt="avatar"
-                    style="width: 150px"
-                />
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <h5 class="mb-3">John Doe</h5>
-                        <p class="text-muted">
-                            <i class="fas fa-quote-left pe-2"></i>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Minus et deleniti nesciunt sint eligendi
-                            reprehenderit reiciendis.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item mb-5">
-                <img
-                    class="rounded-circle shadow-1-strong mb-4"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
-                    alt="avatar"
-                    style="width: 150px"
-                />
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <h5 class="mb-3">Anna Deynah</h5>
-                        <p class="text-muted">
-                            <i class="fas fa-quote-left pe-2"></i>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Minus et deleniti nesciunt sint eligendi
-                            reprehenderit reiciendis, quibusdam illo, beatae
-                            quia fugit consequatur laudantium velit magnam
-                            error. Consectetur distinctio fugit doloremque.
-                        </p>
-                    </div>
-                </div>
-            </div> --}}
         </div>
         <button
             class="carousel-control-prev"
@@ -381,7 +319,7 @@
 <section id="faq" class="my-4">
     <h1 class="text-center my-5 fw-bold">FAQ</h1>
     <div class="container">
-        <div class="row d-flex justify-content-center align-items-center" style="height:60vh"> 
+        <div class="row d-flex justify-content-center align-items-center mx-3" style="height:60vh"> 
             <div class="col-lg-9 rounded p-4" style="background-color: #f1f1f1">
                 <div style="border-bottom: 1px solid #d1d1d1;" class="mb-3">
                     <div class="d-flex" id="definition">

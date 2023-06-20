@@ -33,7 +33,6 @@ class TestimonyController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -44,7 +43,13 @@ class TestimonyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Testimony::create([
+            "name" => $request->name,
+            "description" => $request->description,
+            "category" => $request->category
+        ]);
+
+        return redirect()->back()->with("alert", "Testimoni berhasil ditambahkan!");
     }
 
     /**

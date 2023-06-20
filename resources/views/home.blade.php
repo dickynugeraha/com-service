@@ -81,6 +81,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </section>
+
 <section class="my-4" id="alasan-pilih-kami">
     <h1 class="fw-bold text-center my-5">ALASAN PILIH KAMI</h1>
     <div
@@ -91,22 +92,19 @@
             <div class="d-flex justify-content-center mb-4">
                 <div
                     class="d-flex align-items-center p-3 rounded layanan-item"
-                    style="width: 200px"
                 >
-                    <p class="mb-0">
-                        <i class="fa fa-bolt me-4" style="font-size: 3rem"></i>
-                    </p>
+                    {{-- <i class="fa fa-bolt me-4" style="font-size: 3rem"></i> --}}
+                    <img src="assets/images/alasan-cepat.png" width="50px" height="50px" class="rounded-circle me-3" alt="" srcset="">
                     <p class="mb-0">Layanan cepat</p>
                 </div>
             </div>
             <div class="d-flex justify-content-center mb-4">
                 <div
                     class="d-flex align-items-center p-3 rounded layanan-item"
-                    style="width: 200px"
                 >
-                    <p class="mb-0">
-                        <i class="fa fa-money me-4" style="font-size: 3rem"></i>
-                    </p>
+                        {{-- <i class="fa fa-money me-4" style="font-size: 3rem"></i> --}}
+                    <img src="assets/images/alasan-murah.png" width="50px" height="50px" class="rounded-circle me-3" alt="" srcset="">
+                        
                     <p class="mb-0">Dijamin murah</p>
                 </div>
             </div>
@@ -117,12 +115,12 @@
                     class="d-flex align-items-center p-3 rounded layanan-item"
                     style="width: 200px"
                 >
-                    <p class="mb-0">
-                        <i
+                        {{-- <i
                             class="fa fa-user-secret me-4"
                             style="font-size: 3rem"
-                        ></i>
-                    </p>
+                        ></i> --}}
+                    <img src="assets/images/alasan-privasi.png" width="50px" height="50px" class="rounded-circle me-3" alt="" srcset="">
+
                     <p class="mb-0">Privasi terjaga</p>
                 </div>
             </div>
@@ -131,12 +129,14 @@
                     class="d-flex align-items-center p-3 rounded layanan-item"
                     style="width: 200px"
                 >
-                    <p class="mb-0">
-                        <i
+               
+                        {{-- <i
                             class="fa fa-retweet me-4"
                             style="font-size: 3rem"
-                        ></i>
-                    </p>
+                        ></i> --}}
+                    <img src="assets/images/alasan-garansi.png" width="50px" height="50px" class="rounded-circle me-3" alt="" srcset="">
+
+              
                     <p class="mb-0">Bergaransi</p>
                 </div>
             </div>
@@ -147,9 +147,11 @@
                     class="d-flex align-items-center p-3 rounded layanan-item"
                     style="width: 200px"
                 >
-                    <p class="mb-0">
-                        <i class="fa fa-users me-4" style="font-size: 3rem"></i>
-                    </p>
+                    {{-- <p class="mb-0"> --}}
+                        {{-- <i class="fa fa-users me-4" style="font-size: 3rem"></i> --}}
+                    <img src="assets/images/alasan-konsultasi.png" width="50px" height="50px" class="rounded-circle me-3" alt="" srcset="">
+
+                    {{-- </p> --}}
                     <p class="mb-0">Mudah konsultasi</p>
                 </div>
             </div>
@@ -158,12 +160,14 @@
                     class="d-flex align-items-center p-3 rounded layanan-item"
                     style="width: 200px"
                 >
-                    <p class="mb-0">
+                    {{-- <p class="mb-0">
                         <i
                             class="fa fa-handshake-o me-4"
                             style="font-size: 3rem"
                         ></i>
-                    </p>
+                    </p> --}}
+                    <img src="assets/images/alasan-transaksi.png" width="50px" height="50px" class="rounded-circle me-3" alt="" srcset="">
+
                     <p class="mb-0">Transaksi terjamin</p>
                 </div>
             </div>

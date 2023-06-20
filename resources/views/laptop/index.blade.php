@@ -67,12 +67,10 @@
       <td>Harga</td>
       <td>Deskripsi</td>
       <td>Kategori</td>
-      @foreach ($laptops as $laptop)
-      <?php $photos = explode("|", $laptop->photo) ?>
-        @for ($i = 0; $i < count($photos); $i++)
-          <td>Gambar {{ $i + 1 }}</td>
-        @endfor
-      @endforeach
+      <td>Gambar 1</td>
+      <td>Gambar 2</td>
+      <td>Gambar 3</td>
+      <td>Gambar 4</td>
       <td>Aksi</td>
     </tr>
   </thead>

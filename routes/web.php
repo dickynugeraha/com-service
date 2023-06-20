@@ -22,8 +22,13 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', [TestimonyController::class, "testimoniesHome"]);
 Route::get("produk", [ProductController::class, "index2"]);
+Route::get("produk/{id}", [ProductController::class, "show"]);
 Route::get("laptop", [LaptopController::class, "index2"]);
+Route::get("laptop/{id}", [LaptopController::class, "show"]);
 Route::get("layanan", [LayananController::class, "index2"]);
+Route::get("layanan/{id}", [LayananController::class, "show"]);
+Route::post("testimony", [TestimonyController::class, "store"]);
+
 
 // admin
 Route::get("admin/login", function () {
@@ -65,7 +70,6 @@ Route::group(["middleware" => ["admin"]], function () {
     Route::get("laptop/{id}/delete", [LaptopController::class, "destroy"]);
     // testimonies
     Route::get("admin/testimonies", [TestimonyController::class, "index"]);
-    Route::post("testimony", [TestimonyController::class, "store"]);
     Route::post("testimony/update", [TestimonyController::class, "update"]);
     Route::get("testimony/{id}/delete", [TestimonyController::class, "destroy"]);
     // akun

@@ -76,7 +76,6 @@
       <td>
         <a data-bs-toggle="modal" data-bs-target="#exampleModal{{$product->id}}" class="btn btn-sm btn-info color-white" href="/"> Ubah</a>
         <a class="btn btn-sm btn-danger color-white" href="/product/{{$product->id}}/delete"> Hapus</a>
-        
       </td>
     </tr>
     <?php $no++; ?>

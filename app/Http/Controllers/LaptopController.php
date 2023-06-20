@@ -77,9 +77,11 @@ class LaptopController extends Controller
      * @param  \App\Models\Laptop  $laptop
      * @return \Illuminate\Http\Response
      */
-    public function show(Laptop $laptop)
+    public function show($id)
     {
-        //
+        $laptop = Laptop::where("id", "=", $id)->first();
+
+        return view("laptop.detail", compact("laptop"));
     }
 
     /**

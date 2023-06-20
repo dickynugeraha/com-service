@@ -22,11 +22,11 @@ class LayananController extends Controller
 
     public function index2()
     {
-        $ketik = Layanan::where("category", "=", "ketik");
-        $cetak = Layanan::where("category", "=", "cetak");
-        $jilid = Layanan::where("category", "=", "jilid");
+        $ketik = Layanan::where("category", "=", "ketik")->get();
+        $cetak = Layanan::where("category", "=", "cetak")->get();
+        $jilid = Layanan::where("category", "=", "jilid")->get();
 
-        $testimonies = Testimony::where("category", "=", "laptop")->get();
+        $testimonies = Testimony::where("category", "=", "layanan")->get();
 
 
         return view("layanan.index_user", compact("ketik", "cetak", "jilid", "testimonies"));
@@ -72,9 +72,11 @@ class LayananController extends Controller
      * @param  \App\Models\Layanan  $layanan
      * @return \Illuminate\Http\Response
      */
-    public function show(Layanan $layanan)
+    public function show($id)
     {
-        //
+        $layanan = Layanan::where("id", "=", $id)->first();
+
+        return view("layanan.detail", compact("layanan"));
     }
 
     /**

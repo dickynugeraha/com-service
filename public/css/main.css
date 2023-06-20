@@ -81,6 +81,22 @@ label {
     width: 18rem;
 }
 
+img {
+    object-fit: cover;
+}
+
+.btn-whatsapp:hover {
+    background-color: #00ff04;
+    color: white;
+}
+
+.btn-whatsapp {
+    color: white;
+    background-color: #00ff04;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
 .card-layanan:hover {
     transform: scale(1.1);
 }

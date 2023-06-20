@@ -1,4 +1,4 @@
-@extends('layouts.user_view');
+@extends('layouts.user_view')
 
 @section('content_user')
 <div class="container">
@@ -7,25 +7,24 @@
 <div class="bg-color mb-4">
   <div class="container">
     <div class="d-flex justify-content-between">
-      <h1 class="fs-1 py-5 fw-bold">LAPTOP</h1>
-      <img src="" alt="img-">
+      <h1 class="fs-1 py-5 fw-bold">PENGETIKAN</h1>
+      <img src="assets/images/ketik.png" width="150px" alt="img-">
     </div>
   </div>
 </div>
 <div class="container mb-4">
   <div class="row d-flex justify-content-center">
-    @if (count($laptops) == 0)
-    <div class="col-4 text-center">Laptop tidak tersedia</div>
+    @if (count($ketik) == 0)
+    <div class="col-4 text-center">Layanan pengetikan tidak tersedia</div>
     @endif
-    @foreach ($laptops as $laptop)
+    @foreach ($ketik as $ktk)
     <div class="col-lg-4 col-md-6" >
       <div class="card card-layanan mx-auto">
-        <?php $photos = explode("|", $laptop->photo) ?>
-        <img src="/uploads/laptop_photo/{{$photos[0]}}" width="100%" height="250px" alt="" class="card-img-top">
+        <img src="/uploads/layanan_photo/{{$ktk->photo}}" width="100%" height="250px" alt="" class="card-img-top">
         <div class="card-body pt-4">
-          <h5 class="card-title mb-2">{{$laptop->name}}</h5>
-          <p class="card-text text-muted">Rp. {{number_format($laptop->price,0,',','.')}}</p>
-          <a href="#" class="btn btn-sm btn-dark">Beli</a>
+          <h5 class="card-title mb-2">{{$ktk->name}}</h5>
+          <p class="card-text text-muted">Rp. {{number_format($ktk->price,0,',','.')}}</p>
+          <a href="layanan/{{$ktk->id}}" class="btn btn-sm btn-dark">Beli</a>
         </div>
       </div>
     </div>
@@ -36,25 +35,24 @@
 <div class="bg-color mb-4">
   <div class="container">
     <div class="d-flex justify-content-between">
-      <img src="" alt="img-">
-      <h1 class="fs-1 py-5 fw-bold">SERVICES</h1>
+      <img src="assets/images/fotocopy.png" width="150px" alt="img-">
+      <h1 class="fs-1 py-5 fw-bold">PRINTING / PERCETAKAN</h1>
     </div>
   </div>
 </div>
 <div class="container mb-4">
   <div class="row d-flex justify-content-center">
-    @if (count($services) == 0)
-    <div class="col-4 text-center">Service tidak tersedia</div>
+    @if (count($cetak) == 0)
+    <div class="col-4 text-center">Layanan percetakan tidak tersedia</div>
     @endif
-    @foreach ($services as $service)
+    @foreach ($cetak as $ctk)
     <div class="col-lg-4 col-md-6" >
       <div class="card card-layanan mx-auto">
-        <?php $photos = explode("|", $service->photo) ?>
-        <img src="/uploads/laptop_photo/{{$photos[0]}}" width="100%" height="250px" alt="" class="card-img-top">
+        <img src="/uploads/layanan_photo/{{$ctk->photo}}" width="100%" height="250px" alt="" class="card-img-top">
         <div class="card-body pt-4">
-          <h5 class="card-title mb-2">{{$service->name}}</h5>
-          <p class="card-text text-muted">Rp. {{number_format($service->price,0,',','.')}}</p>
-          <a href="#" class="btn btn-sm btn-dark">Beli</a>
+          <h5 class="card-title mb-2">{{$ctk->name}}</h5>
+          <p class="card-text text-muted">Rp. {{number_format($ctk->price,0,',','.')}}</p>
+          <a href="layanan/{{$ctk->id}}" class="btn btn-sm btn-dark">Beli</a>
         </div>
       </div>
     </div>
@@ -65,25 +63,24 @@
 <div class="bg-color mb-4">
   <div class="container">
     <div class="d-flex justify-content-between">
-      <h1 class="fs-1 py-5 fw-bold">SPERPARTS</h1>
-      <img src="" alt="img-">
+      <h1 class="fs-1 py-5 fw-bold">PERJILIDAN</h1>
+      <img src="assets/images/jilid.png" width="150px" alt="img-">
     </div>
   </div>
 </div>
 <div class="container mb-4">
   <div class="row d-flex justify-content-center">
-    @if (count($sperparts) == 0)
-        <div class="col-4 text-center">Sperpart tidak tersedia</div>
+    @if (count($jilid) == 0)
+        <div class="col-4 text-center">Layanan jilid tidak tersedia</div>
     @endif
-    @foreach ($sperparts as $sperpart)
+    @foreach ($jilid as $jld)
     <div class="col-lg-4 col-md-6" >
       <div class="card card-layanan mx-auto">
-        <?php $photos = explode("|", $sperpart->photo) ?>
-        <img src="/uploads/laptop_photo/{{$photos[0]}}" width="100%" height="250px" alt="" class="card-img-top">
+        <img src="/uploads/layanan_photo/{{$jld->photo}}" width="100%" height="250px" alt="" class="card-img-top">
         <div class="card-body pt-4">
-          <h5 class="card-title mb-2">{{$sperpart->name}}</h5>
-          <p class="card-text text-muted">Rp. {{number_format($sperpart->price,0,',','.')}}</p>
-          <a href="#" class="btn btn-sm btn-dark">Beli</a>
+          <h5 class="card-title mb-2">{{$jld->name}}</h5>
+          <p class="card-text text-muted">Rp. {{number_format($jld->price,0,',','.')}}</p>
+          <a href="layanan/{{$jld->id}}" class="btn btn-sm btn-dark">Beli</a>
         </div>
       </div>
     </div>
@@ -104,9 +101,10 @@
   </div>
   <div class="testimony-form bg-color p-4 rounded">
       <p class="fw-bold">Kirim testimoni yuk...</p>
-      <form action="" method="post">
+      <form action="testimony" method="post">
         <input type="text" name="name" id="" placeholder="Nama" class="form-control mb-3" style="border-radius: 3rem">
         <input type="text" name="description" id="" placeholder="Testimoni" class="form-control mb-3" style="border-radius: 3rem">
+        <input type="hidden" name="category" value="layanan">
         <div class="ms-auto text-end">
           <button type="submit" class="btn btn-sm btn-light px-3">Kirim</button>
         </div>

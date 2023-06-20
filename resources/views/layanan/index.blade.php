@@ -44,9 +44,10 @@
               <div class="mb-2">
                   <label for="category" class="form-label">Kategori</label>
                   <select name="category" id="category" class="form-select">
-                    <option value="pengetikan">Pengetikan</option>
-                    <option value="percetakan">Percetakan / Printing</option>
-                    <option value="penjilidan"><Param></Param>enjilidan</option>
+                    <option value="">-- pilih satu --</option>
+                    <option value="ketik">Pengetikan</option>
+                    <option value="cetak">Percetakan / Printing</option>
+                    <option value="jilid"><Param></Param>enjilidan</option>
                   </select>
                 </div>
           </div>
@@ -125,9 +126,10 @@
                 <div class="mb-2">
                     <label for="category" class="form-label">Kategori</label>
                     <select name="category" id="category" class="form-select">
-                      <option {{$layanan->category == "layanan" ? "pengetikan" : ""}} value="layanan">Pengetikan</option>
-                      <option {{$layanan->category == "layanan" ? "percetakan" : ""}} value="service">Percetakan</option>
-                      <option {{$layanan->category == "layanan" ? "penjilidan" : ""}} value="sperpart">Penjilidan</option>
+                      <option value="">-- pilih satu --</option>
+                      <option {{$layanan->category == "layanan" ? "ketik" : ""}} value="ketik">Pengetikan</option>
+                      <option {{$layanan->category == "layanan" ? "cetak" : ""}} value="cetak">Percetakan</option>
+                      <option {{$layanan->category == "layanan" ? "jilid" : ""}} value="jilid">Penjilidan</option>
                     </select>
                   </div>
             </div>

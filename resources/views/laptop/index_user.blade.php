@@ -1,4 +1,4 @@
-@extends('layouts.user_view');
+@extends('layouts.user_view')
 
 @section('content_user')
 <div class="container">
@@ -8,7 +8,7 @@
   <div class="container">
     <div class="d-flex justify-content-between">
       <h1 class="fs-1 py-5 fw-bold">LAPTOP</h1>
-      <img src="" alt="img-">
+      <img src="assets/images/laptop.png" width="150px" alt="img-">
     </div>
   </div>
 </div>
@@ -25,7 +25,7 @@
         <div class="card-body pt-4">
           <h5 class="card-title mb-2">{{$laptop->name}}</h5>
           <p class="card-text text-muted">Rp. {{number_format($laptop->price,0,',','.')}}</p>
-          <a href="#" class="btn btn-sm btn-dark">Beli</a>
+          <a href="/laptop/{{$laptop->id}}" class="btn btn-sm btn-dark">Beli</a>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
 <div class="bg-color mb-4">
   <div class="container">
     <div class="d-flex justify-content-between">
-      <img src="" alt="img-">
+      <img src="assets/images/service.png" width="150px" alt="img-">
       <h1 class="fs-1 py-5 fw-bold">SERVICES</h1>
     </div>
   </div>
@@ -54,7 +54,7 @@
         <div class="card-body pt-4">
           <h5 class="card-title mb-2">{{$service->name}}</h5>
           <p class="card-text text-muted">Rp. {{number_format($service->price,0,',','.')}}</p>
-          <a href="#" class="btn btn-sm btn-dark">Beli</a>
+          <a href="/laptop/{{$service->id}}" class="btn btn-sm btn-dark">Beli</a>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@
   <div class="container">
     <div class="d-flex justify-content-between">
       <h1 class="fs-1 py-5 fw-bold">SPERPARTS</h1>
-      <img src="" alt="img-">
+      <img src="assets/images/sperpart.png" width="150px" alt="img-">
     </div>
   </div>
 </div>
@@ -83,7 +83,7 @@
         <div class="card-body pt-4">
           <h5 class="card-title mb-2">{{$sperpart->name}}</h5>
           <p class="card-text text-muted">Rp. {{number_format($sperpart->price,0,',','.')}}</p>
-          <a href="#" class="btn btn-sm btn-dark">Beli</a>
+          <a href="/laptop/{{$sperpart->id}}" class="btn btn-sm btn-dark">Beli</a>
         </div>
       </div>
     </div>
@@ -104,9 +104,10 @@
   </div>
   <div class="testimony-form bg-color p-4 rounded">
       <p class="fw-bold">Kirim testimoni yuk...</p>
-      <form action="" method="post">
+      <form action="/testimony" method="post">
         <input type="text" name="name" id="" placeholder="Nama" class="form-control mb-3" style="border-radius: 3rem">
         <input type="text" name="description" id="" placeholder="Testimoni" class="form-control mb-3" style="border-radius: 3rem">
+        <input type="hidden" name="category" value="laptop">
         <div class="ms-auto text-end">
           <button type="submit" class="btn btn-sm btn-light px-3">Kirim</button>
         </div>

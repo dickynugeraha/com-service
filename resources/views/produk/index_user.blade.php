@@ -1,4 +1,4 @@
-@extends('layouts.user_view');
+@extends('layouts.user_view')
 
 @section('content_user')
 <div class="container">
@@ -8,10 +8,11 @@
   <div class="container">
     <div class="d-flex justify-content-between">
       <h1 class="fs-1 py-5 fw-bold">ALAT TULIS KANTOR</h1>
-      <img src="" alt="img-">
+      <img src="assets/images/alat-tulis-kantor.png" width="150px" alt="img-">
     </div>
   </div>
 </div>
+
 <div class="container mb-4">
   <div class="row d-flex justify-content-center">
     @if (count($products) == 0)
@@ -23,16 +24,17 @@
         <img src="/uploads/product_photo/{{$product->photo}}" width="100%" height="250px" alt="" class="card-img-top">
         <div class="card-body pt-4">
           <h5 class="card-title mb-2">{{$product->name}}</h5>
-          <p class="card-text text-muted">{{$product->description}}</p>
+          <?php $descriptions = explode("|", $product->description) ?>
+          <p class="card-text text-muted">{{$descriptions[0]}}</p>
           {{-- <p class="card-text text-muted">Rp. {{number_format($product->price,0,',','.')}}</p> --}}
-          <a href="#" class="btn btn-sm btn-dark">Beli</a>
+          <a href="/produk/{{$product->id}}" class="btn btn-sm btn-dark">Beli</a>
         </div>
       </div>
     </div>
     @endforeach
   </div>
 </div>
-
+{{-- 
 <div class="container my-5">
   <div class="fs-3 mb-3">TESTIMONI</div>
   <div class="testimony-list mb-3">
@@ -62,5 +64,5 @@
         </div>
       </form>
   </div>
-</div>
+</div> --}}
 @endsection

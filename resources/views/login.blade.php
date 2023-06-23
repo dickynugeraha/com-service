@@ -17,8 +17,8 @@
       <div class="row justify-content-center align-items-center mx-3">
         <div class="col-lg-4 bg-color rounded " style="padding-left: 6rem; padding-right: 6rem; height: 16rem;">
               <div class="d-flex justify-content-center mb-3" style="margin-top: -4rem">
-                <div class="rounded-circle text-center" style="background-color: white; width: 120px; height:120px;">
-                  <img width="90%" height="90%" class="rounded-circle" src="/assets/images/logo-navbar.png" alt="Logi" srcset="">
+                <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: white; width: 120px; height:120px;">
+                  <img width="65%" height="65%" src="/assets/images/logo-navbar.png" alt="Logi" srcset="">
                 </div>
               </div>
               <h4 class="text-center mb-3">LOGIN ADMIN</h4>

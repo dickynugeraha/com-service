@@ -26,8 +26,7 @@ class LayananController extends Controller
         $cetak = Layanan::where("category", "=", "cetak")->get();
         $jilid = Layanan::where("category", "=", "jilid")->get();
 
-        $testimonies = Testimony::where("category", "=", "layanan")->get();
-
+        $testimonies = Testimony::where("category", "=", "layanan")->orderBy("id", "DESC")->get();
 
         return view("layanan.index_user", compact("ketik", "cetak", "jilid", "testimonies"));
     }

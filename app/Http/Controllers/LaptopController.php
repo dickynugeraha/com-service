@@ -26,7 +26,7 @@ class LaptopController extends Controller
         $services = Laptop::where("category", "=", "service")->get();
         $sperparts = Laptop::where("category", "=", "sperpart")->get();
 
-        $testimonies = Testimony::where("category", "=", "laptop")->get();
+        $testimonies = Testimony::where("category", "=", "laptop")->orderBy("id", "DESC")->get();
 
         return view("laptop.index_user", compact("laptops", "services", "sperparts", "testimonies"));
     }

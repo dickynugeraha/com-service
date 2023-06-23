@@ -12,13 +12,13 @@
       </div>
       <div class="col-lg-4 col-md-6 pe-0">
         <p class="color-white fw-bold">Kontak</p>
-        <a href="https://wa.me/087882800165" target="blank" class="text-decoration-none" style="color:black">
+        <a href="https://wa.me/087774018169" target="blank" class="text-decoration-none" style="color:black">
           <div class="d-flex align-items-center mb-3">
             <i class="fs-3 me-3 color-white fa fa-whatsapp"></i>
             <p class="m-0 p-0"> 0878 8280 0165</p>
           </div>
         </a>
-        <a href="https://www.instagram.com/tercipungcipung/" target="blank" class="text-decoration-none" style="color:black">
+        <a href="http://instagram.com/laatansa.comp/" target="blank" class="text-decoration-none" style="color:black">
           <div class="d-flex align-items-center">
             <i class="fs-3 me-3 color-white fa fa-instagram"></i>
             <p class="m-0 p-0"> laatansacomp</p>

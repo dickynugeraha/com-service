@@ -91,13 +91,19 @@
 <div class="container my-5">
   <div class="fs-3 mb-3">TESTIMONI</div>
   <div class="testimony-list mb-3">
-    @foreach ($testimonies as $testimony)
-    <div class="p-3 bg-color3 d-flex rounded mb-3">
-      <p class="text-muted m-0">{{$testimony->name}}</p>
-      <span class="mx-2">-</span>
-      <p class="m-0">{{$testimony->description}}</p>
-    </div>
-    @endforeach
+    <?php 
+      $countLoop = count($testimonies);
+      if ($countLoop >= 5) {
+        $countLoop = 5;
+      } 
+    ?>
+    @for ($i = 0; $i < $countLoop; $i++)
+      <div class="p-3 bg-color3 d-flex rounded mb-3">
+        <p class="text-muted m-0">{{$testimonies[$i]->name}}</p>
+        <span class="mx-2">-</span>
+        <p class="m-0">{{$testimonies[$i]->description}}</p>
+      </div>
+    @endfor
   </div>
   <div class="testimony-form bg-color p-4 rounded">
       <p class="fw-bold">Kirim testimoni yuk...</p>

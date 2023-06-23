@@ -37,7 +37,7 @@
       </td>
     </tr>
     <?php $no++; ?>
-    <div class="modal fade" id="exampleModal{{$layanan->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal{{$testimony->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">

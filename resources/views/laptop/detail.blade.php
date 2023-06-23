@@ -35,14 +35,17 @@
       <h1 class="fs-1 fw-bold mt-3">{{$laptop->name}}</h1>
       <p class="fs-4 text-muted">Rp. {{number_format($laptop->price,0,',','.')}}</p>
       <a target="blank" href="https://wa.me/+6287882800165" class="btn btn-whatsapp mb-3 fw-bold">Whatsapp</a>
-      <?php $descriptions = explode("|", $laptop->description) ?>
-      <p class="text-muted mb-0 mt-4">Deskripsi</p>
-      <ul>
-        @foreach ($descriptions as $description)
-          <li class="text-muted">{{ $description }}</li>
-        @endforeach
-      </ul>
+      <p class="text-muted">Untuk selajutnya silakan hubungi kami melalui WhatsApp untuk melakukan konsultasi dan pemesanan terimakasih.</p>
     </div>
+  </div>
+  <div class="container">
+    <h1 class="mb-0 mt-4 fs-4 fw-bold">Deskripsi</h1>
+    <?php $descriptions = explode("|", $laptop->description) ?>
+    <ul class="mt-2">
+      @foreach ($descriptions as $description)
+        <li class="text-muted">{{ $description }}</li>
+      @endforeach
+    </ul>
   </div>
 </div>
 @endsection

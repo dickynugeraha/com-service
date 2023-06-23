@@ -274,11 +274,7 @@
                     <div class="col-lg-8" style="min-height: 12rem">
                         <p class="fs-5 fst-italic" style="color:grey">
                             <i class="fa fa-quote-left pe-2"></i>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Minus et deleniti nesciunt sint eligendi
-                            reprehenderit reiciendis, quibusdam illo, beatae
-                            quia fugit consequatur laudantium velit magnam
-                            error. Consectetur distinctio fugit doloremque.
+                            Pelayanan sangat baik, barang berkualitas dan banyak variant, response WA sangat cepat dan harga yang ditawarkan cenderung relevan.
                             <i class="fa fa-quote-right ps-2"></i>
                         </p>
                         <h1 class="fs-3 mb-3">Kale Pramono</h1>

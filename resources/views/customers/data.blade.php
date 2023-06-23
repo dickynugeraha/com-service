@@ -36,7 +36,7 @@
     </head>
     <body>
       <div class="row justify-content-center align-items-center" style="min-height: 95vh">
-        <h5 class="mb-3 text-center">DATA CUSTOMERS</h5>
+        <h5 class="mb-3 text-center">LAPORAN PEMBELIAN</h5>
         <table id="customers" class="table table-bordered" border="1">
             <tr style="font-weight: bold; font-size:0.9rem">
               <td>No</td>
@@ -65,6 +65,10 @@
             </tr>
             <?php $no++; ?>
              @endforeach
+            <tr style="font-size: 0.8rem">
+              <td colspan="7">Total pendapatan</td>
+              <td colspan="2" class="text-end">Rp. {{number_format($data["totalIncome"],0,',','.')}}</td>
+            </tr>
         </table>
       </div>
     </body>

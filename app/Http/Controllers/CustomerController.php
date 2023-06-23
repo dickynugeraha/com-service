@@ -27,12 +27,15 @@ class CustomerController extends Controller
      */
     public function createPDF()
     {
-        $customers = Customer::all();
+        $customers = Customer::where("status", "!=", "batal")->get();
+
+        $totalIncome = $this->getTotalIncome($customers);
 
         $data = [
             "title" => "Data customers",
             "date" => date("m/d/Y"),
             "customers" => $customers,
+            "totalIncome" => $totalIncome
         ];
         $pdf = Pdf::loadView("customers.data", compact("data"))->setOption(['defaultFont' => 'sans-serif']);;
 
@@ -47,6 +50,16 @@ class CustomerController extends Controller
         // return $pdf->download('' . $filename . '.pdf');
     }
 
+    private function getTotalIncome($customers)
+    {
+        $totalIncome = 0;
+
+        foreach ($customers as $customer) {
+            $totalIncome += $customer->price;
+        }
+
+        return $totalIncome;
+    }
 
 
     /**

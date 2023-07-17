@@ -5,11 +5,7 @@
 >
     <div class="position-sticky">
         <ul class="nav flex-column">
-            {{-- <li class="nav-item px-3 py-2">
-                <a class="fs-6 nav-link bg-color rounded text-center fw-bold" style="color: white" href="/admin">
-                        Dashboard
-                </a>
-            </li> --}}
+          
             <li class="nav-item px-3 py-2">
                 <a class="fs-6 nav-link bg-color rounded text-center fw-bold" style="color: white" href="/admin/customers">
                     Customer
@@ -33,6 +29,11 @@
             <li class="nav-item px-3 py-2">
                 <a class="fs-6 nav-link bg-color rounded text-center fw-bold" style="color: white" href="/admin/testimonies">
                     Testimoni
+                </a>
+            </li>
+            <li class="nav-item px-3 py-2">
+                <a class="fs-6 nav-link bg-color rounded text-center fw-bold" style="color: white" href="/admin/members">
+                    Members
                 </a>
             </li>
             <li class="nav-item px-3 py-2">

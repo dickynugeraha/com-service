@@ -44,10 +44,10 @@
               <td>Nama</td>
               <td>Alamat</td>
               <td>Kategori</td>
-              <td>Harga</td>
               <td>Produk</td>
               <td>Metode Pembayaran</td>
               <td>Status</td>
+              <td style="width: 7rem">Harga</td>
             </tr>
          
             <?php $no = 1;?>
@@ -58,10 +58,10 @@
               <td>{{$customer->name}}</td>
               <td>{{$customer->address}}</td>
               <td>{{$customer->category}}</td>
-              <td>Rp. {{number_format($customer->price,0,',','.')}}</td>
               <td>{{$customer->product}}</td>
               <td>{{$customer->payment_method}}</td>
               <td>{{$customer->status}}</td>
+              <td>Rp. {{number_format($customer->price,0,',','.')}}</td>
             </tr>
             <?php $no++; ?>
              @endforeach

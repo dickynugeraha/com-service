@@ -40,14 +40,6 @@ class CustomerController extends Controller
         $pdf = Pdf::loadView("customers.data", compact("data"))->setOption(['defaultFont' => 'sans-serif']);;
 
         return $pdf->download('customers.pdf');
-
-        // if (!File::exists($path)) {
-        //     File::makeDirectory($path, $mode = 0755, true, true);
-        // }
-
-        // $pdf = PDF::loadView("customers.data", $data)->save('' . $path . '/' . $filename . '.pdf');
-
-        // return $pdf->download('' . $filename . '.pdf');
     }
 
     private function getTotalIncome($customers)

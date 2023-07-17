@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LaptopController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestimonyController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,10 @@ Route::get("laptop/{id}", [LaptopController::class, "show"]);
 Route::get("layanan", [LayananController::class, "index2"]);
 Route::get("layanan/{id}", [LayananController::class, "show"]);
 Route::post("testimony", [TestimonyController::class, "store"]);
+Route::get("member", function () {
+    return view("member/index_user");
+});
+Route::post("member", [MemberController::class, "store"]);
 
 
 // admin
@@ -39,6 +44,7 @@ Route::get("admin/login", function () {
     return view("login");
 });
 Route::post("/login", [AdminController::class, "login"]);
+
 Route::group(["middleware" => ["admin"]], function () {
     Route::get("logout", function () {
         $isLogin = Session::get("isLogin");
@@ -51,7 +57,7 @@ Route::group(["middleware" => ["admin"]], function () {
     Route::get("admin/customers", [CustomerController::class, "index"]);
     Route::post("customer", [CustomerController::class, "store"]);
     Route::post("customer/update", [CustomerController::class, "update"]);
-    Route::post("customer/{id}/delete", [CustomerController::class, "destroy"]);
+    Route::get("customer/{id}/delete", [CustomerController::class, "destroy"]);
     Route::get("admin/customer/create-pdf", [CustomerController::class, "createPDF"]);
     // product
     Route::get("admin/products", [ProductController::class, "index"]);
@@ -77,4 +83,8 @@ Route::group(["middleware" => ["admin"]], function () {
     Route::post("admin", [AdminController::class, "store"]);
     Route::post("admin/update", [AdminController::class, "update"]);
     Route::get("admin/{id}/delete", [AdminController::class, "destroy"]);
+    // members
+    Route::get("admin/members", [MemberController::class, "index"]);
+    Route::post("member/update", [MemberController::class, "update"]);
+    Route::get("member/{id}/delete", [MemberController::class, "destroy"]);
 });
